@@ -33,9 +33,13 @@ class MatakuliahController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $kode = null)
     {
-        //
+        if ($kode) {
+            return "Anda mengakses matakuliah " . $kode;
+        } else {
+            return "Masukkan kode matakuliah!";
+        }
     }
 
     /**
