@@ -6,11 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
-<<<<<<< HEAD
 use App\Http\Controllers\UserController;
-=======
 use App\Http\Controllers\JenisSuratController;
->>>>>>> 521530514796422fb3ff2a5e8b37b23c15a0dfac
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,8 +34,6 @@ Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard'
 
 Route::resource('pelanggan', PelangganController::class);
 
-<<<<<<< HEAD
 Route::resource('user', UserController::class);
-=======
+
 Route::resource('jenis_surat', JenisSuratController::class);
->>>>>>> 521530514796422fb3ff2a5e8b37b23c15a0dfac
