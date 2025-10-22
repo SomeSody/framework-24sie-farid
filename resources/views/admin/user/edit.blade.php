@@ -1,5 +1,5 @@
 @extends('layouts.admin.app')
-@section('title', 'Edit Pelanggan')
+{{-- @section('title', 'Edit Pelanggan') --}}
 @section('content')
 <div class="py-4">
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -30,59 +30,40 @@
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
-                        <form action="{{route('pelanggan.update',$dataPelanggan->pelanggan_id)}}" method="POST">
+                        <form action="{{route('user.update',$dataUser->id)}}" method="POST">
                             @csrf
                             @method("PUT")
                             <div class="row mb-4">
                                 <div class="col-lg-4 col-sm-6">
                                     <!-- First Name -->
                                     <div class="mb-3">
-                                        <label for="first_name" class="form-label">First name</label>
-                                        <input name="first_name" id="first_name" class="form-control" value="{{ $dataPelanggan->first_name }}" required>
+                                        <label for="name" class="form-label">First name</label>
+                                        <input name="name" id="name" class="form-control" value="{{ $dataUser->name }}" required>
                                     </div>
 
                                     <!-- Last Name -->
                                     <div class="mb-3">
-                                        <label for="last_name" class="form-label">Last name</label>
-                                        <input name="last_name" id="last_name" class="form-control" value="{{ $dataPelanggan->last_name }}" required>
+                                        <label for="email" class="form-label">Last name</label>
+                                        <input name="email" id="email" class="form-control" value="{{ $dataUser->email }}" required>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-4 col-sm-6">
-                                    <!-- Birthday -->
-                                    <div class="mb-3">
-                                        <label for="birthday" class="form-label">Birthday</label>
-                                        <input name="birthday" id="birthday" class="form-control" value="{{ $dataPelanggan->birthday }}">
-                                    </div>
-
-                                    <!-- Gender -->
-                                    <div class="mb-3">
-                                        <label for="gender" class="form-label">Gender</label>
-                                        <select name="gender" name="gender" class="form-select">
-                                            <option value="" selected disabled>Gender</option>
-                                            <option value="Female" {{ $dataPelanggan->gender == 'Female' ? 'selected' : '' }}>Female</option>
-                                            <option value="Male" {{ $dataPelanggan->gender == 'Male' ? 'selected' : '' }}>Male</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-sm-12">
                                     <!-- Email -->
                                     <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input name="email" id="email" class="form-control" value="{{ $dataPelanggan->email }}" required>
+                                        <label for="password" class="form-label">Email</label>
+                                        <input name="password" id="password" class="form-control" value="{{ $dataUser->password }}" required>
                                     </div>
 
                                     <!-- Phone -->
-                                    <div class="mb-3">
-                                        <label for="phone" class="form-label">Phone</label>
-                                        <input name="phone" id="phone" class="form-control" value="{{ $dataPelanggan->phone }}">
-                                    </div>
+                                    {{-- <div class="mb-3">
+                                        <label for="passord_confirmation" class="form-label">Phone</label>
+                                        <input name="passord_confirmation" id="passord_confirmation" class="form-control" value="{{ $dataUser->phone }}">
+                                    </div> --}}
 
                                     <!-- Buttons -->
                                     <div class="">
                                         <button type="submit" class="btn btn-primary">Simpan</button>
-                                        <a href="{{ route('pelanggan.index') }}" class="btn btn-outline-secondary ms-2">Batal</a>
+                                        <a href="{{ route('user.index') }}" class="btn btn-outline-secondary ms-2">Batal</a>
                                     </div>
                                 </div>
                             </div>
